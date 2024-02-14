@@ -8,6 +8,10 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: PersonneRepository::class)]
+#[ORM\InheritanceType("JOINED")]
+#[ORM\DiscriminatorColumn(name: 'type', type: 'string')]
+#[ORM\DiscriminatorMap(['personne' => Personne::class, 'utilisateur' => Utilisateur::class, 'administrateur' => Administrateur::class])]
+
 class Personne implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
