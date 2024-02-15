@@ -50,6 +50,7 @@ class Utilisateur extends Personne
         return $this->id;
     }
 
+
     public function getNbFlorains(): ?int
     {
         return $this->nb_florains;
@@ -232,6 +233,43 @@ class Utilisateur extends Personne
                 $prestationsClient->setIdClient(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLogin(): ?string
+    {
+        return $this->login;
+    }
+
+    public function setLogin(string $login): static
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->login;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
 
         return $this;
     }

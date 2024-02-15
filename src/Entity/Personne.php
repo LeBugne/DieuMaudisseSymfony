@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PersonneRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -11,6 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\InheritanceType("JOINED")]
 #[ORM\DiscriminatorColumn(name: 'type', type: 'string')]
 #[ORM\DiscriminatorMap(['personne' => Personne::class, 'utilisateur' => Utilisateur::class, 'administrateur' => Administrateur::class])]
+#[UniqueEntity(fields: ['login'], message: 'There is already an account with this login')]
 
 class Personne implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -20,7 +22,7 @@ class Personne implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
-    private ?string $login = null;
+    protected ?string $login = null;
 
     #[ORM\Column]
     private array $roles = [];
@@ -29,7 +31,7 @@ class Personne implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
-    private ?string $password = null;
+    protected ?string $password = null;
 
     public function getId(): ?int
     {
