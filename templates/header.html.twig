@@ -1,0 +1,7 @@
+<div id="header">
+    {% if app.user %}
+        <p>Connecté en tant que {{ app.user.login }}</p>
+    {% else %}
+        <p>Non connecté</p>
+    {% endif %}
+</div>
