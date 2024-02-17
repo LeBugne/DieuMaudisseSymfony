@@ -1,13 +1,18 @@
 <div id="header">
     <table>
         <tr>
-            <td align="center" width="10%"><img src="./img/logo.png" alt="logo eco-presto" float="left" width="200px"/></td>
-            <td align="center" width="10%"><h1><a href="{{ path("app_home_page")}}">Eco-Presto</a></h1></td>
-            <td align="right" width="70%"><p>{% if app.user %}
-                Connecté en tant que {{ app.user.login }}
-            {% else %}
-                Non connecté
-            {% endif %}</p></td>
+            <td width="10%"><a href="{{ path("app_home_page")}}"><img src={{asset('/img/logo.png')}} alt="logo eco-presto" float="left" width="150px"/></a></td>
+            <td width="10%"><h1><a href="{{ path("app_home_page")}}">EcoPresto</a></h1></td>
+            <td align="right" width="10%">
+                <div class="aligner">
+                    <a href="{{ path("app_login")}}"><img src={{asset('/img/bonhomme.png')}} alt="logo eco-presto" float="right" width="50px"/></a>
+                    <p>{% if app.user %}
+                        Connecté en tant que {{ app.user.login }}
+                    {% else %}
+                        Non connecté
+                    {% endif %}</p>
+                </div>
+            </td>
         </tr>
     </table>
 </div>
