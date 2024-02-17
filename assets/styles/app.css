@@ -1,5 +1,6 @@
 body {
     background-color: #FEFEFE;
+    font: "Fira Sans",serif;
 }
 
 ul li {
@@ -16,6 +17,11 @@ a {
 }
 
 .nav a {
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.aligner {
+    display: inline-block;
+    vertical-align: middle;
 }
