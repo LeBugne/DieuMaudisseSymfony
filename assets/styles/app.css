@@ -1,3 +1,21 @@
 body {
-    background-color: skyblue;
+    background-color: #FEFEFE;
+}
+
+ul li {
+    list-style-type:none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    background-color: #FDFDFD;
+}
+
+.nav a {
+    margin-left: 8%;
+    margin-right: 8%;
 }
