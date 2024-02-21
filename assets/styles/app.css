@@ -1,3 +1,27 @@
 body {
-    background-color: skyblue;
+    background-color: #FEFEFE;
+    font: "Fira Sans",serif;
+}
+
+ul li {
+    list-style-type:none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    background-color: #FDFDFD;
+}
+
+.nav a {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.aligner {
+    display: inline-block;
+    vertical-align: middle;
 }
